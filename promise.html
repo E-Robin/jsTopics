@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1 id="demo">Change name with promise</h1>
+    <p>My first paragraph.</p>
+
+    <script>
+      let prom = new Promise((resolve, reject) => {
+        setTimeout(() => resolve("promise is done!"), 7000);
+      });
+
+      prom.then(
+        (result) => {
+          alert(result);
+        },
+        (error) => {
+          alert(error);
+        }
+      );
+
+      let changeName = new Promise((resolve, reject) => {
+        setTimeout(() => resolve("ROBIN SINGH GUSAIN"), 5000);
+      });
+
+      changeName.then((result) => {
+        document.getElementById("demo").innerHTML = result;
+      });
+    </script>
+  </body>
+</html>
